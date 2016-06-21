@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: 7vhpANZhMDa+/7KfpOxAxYvshN17p2Nme8bc5SSQgBSLokl38OtFn0nL595kcmhlP9x4FDvOHBKf9w1T2zAuFfQFzP1V0+zLGq2YzP73LB2BzbNA+WRt7bwN0OKbQ53ByP11byrvUT5MsCXVAyJZSbK36nShuzOIojd6xFs6JUpUj+dUkK3RRDhsUF8k6bYFSCd+nQ5MZArjDRIeSJOhV9fIUed2Dsq4wlIEIK/wcRmKkaeR1fdbTsjpGfvu1Edra+OhIox7fem8cwAR6twZhXZnNgn800SmAUTGD1cBt/EqdX/7ONVgsOc8qa+wRRNaEw4mRNy8sjGaFMJOaRBdx+FDRbcYWnEuBMm6YJ7v9tTkyQORNxWCruUh9n6vgeEW9V4mKXOCnewjp+qc1fHy49vTBSqg23M33P6nvTFL1vmwngDIy738YD0U9F+FWOVajOEAS/IUuvfzX7yyXanWPrG3P7k24SqZJ7kAKA5nwHzpKHdoNnUk8pUvI/5Qp13WI32EScUxBYY+Cexgo2yrSoixnGbhEY19ib+Y7aBh3fZ6AEyeHzLztS/rC7tndgVIaXxlsw9HmzLoqZx3Hp1907BypxNE3WEl42EMLnDnHCADq0Y1RLopGSUpZysFVl4bhWN2Ss0gYtJ/kAERweSv4l7j81ctIXr8MPyRYNabPTM=
+  app: piepchat-ui
+  on:
+    repo: jeroenhouben/piepchat-ui
