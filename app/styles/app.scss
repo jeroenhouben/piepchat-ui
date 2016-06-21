@@ -1,6 +1,5 @@
-$roboto-font-path: '/assets/';
-@import "materialize";
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
 
-body {
-  background-color: color('indigo', 'darken-1');
-}
+// Materialize styles
+@import "materialize";
