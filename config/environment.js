@@ -20,6 +20,11 @@ module.exports = function(environment) {
     DS: {
       host: 'http://localhost:4000',
       namespace: 'api'
+    },
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'app.index',
+      routeAfterAuthentication: 'app.index'
     }
   };
 
@@ -44,7 +49,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-     ENV.DS.host = 'https://piepchat.herokuapp.com';
+    ENV.DS.host = 'https://frozen-coast-87972.herokuapp.com';
   }
 
   return ENV;
